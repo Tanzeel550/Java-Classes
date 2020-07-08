@@ -12,7 +12,6 @@ public class Main {
 		ll.add(12);
 		
 		Integer o = 12;
-		
 		System.out.println(ll.size());
 		System.out.println(ll.isEmpty());
 		System.out.println(ll.contains(11));
