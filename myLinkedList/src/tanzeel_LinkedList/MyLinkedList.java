@@ -1,8 +1,7 @@
 package tanzeel_LinkedList;
 
-import java.util.*;
 
-public class TanzeelLinkedList{
+public class MyLinkedList{
 
 	Node head;
 	
@@ -16,12 +15,12 @@ public class TanzeelLinkedList{
 		}
 	}
 	
-	public TanzeelLinkedList(int data){
+	public MyLinkedList(int data){
 		Node to_add = new Node(data);
 		this.head = to_add;
 	}
 	
-	public TanzeelLinkedList(){
+	public MyLinkedList(){
 		this.head = null;
 	}
 
@@ -100,10 +99,22 @@ public class TanzeelLinkedList{
 	}
 
 
-	
-	public Object[] toArray() {
-		// TODO Auto-generated method stub
-		return null;
+//	Done
+	public int[] toArray() {
+		if(this.head == null)
+			return null;
+		
+		int arr[] = new int[this.size()];
+		int pos = 0;
+		Node curr_node = this.head;
+		
+		while(curr_node.next != null) {
+			arr[pos] = curr_node.data;
+			curr_node = curr_node.next;
+			pos++;
+		}
+		arr[pos] = curr_node.data;
+		return arr;
 	}
 
 //	Done
@@ -163,35 +174,6 @@ public class TanzeelLinkedList{
 		return isRemoved;
 	}
 
-	
-	public boolean containsAll(Collection<?> c) {
-		// TODO Auto-generated method stub
-		return false;
-	}
-
-	
-	public boolean addAll(Collection<?> c) {
-		// TODO Auto-generated method stub
-		return false;
-	}
-
-	
-	public boolean addAll(int index, Collection<?> c) {
-		// TODO Auto-generated method stub
-		return false;
-	}
-
-	
-	public boolean removeAll(Collection<?> c) {
-		// TODO Auto-generated method stub
-		return false;
-	}
-
-	
-	public boolean retainAll(Collection<?> c) {
-		// TODO Auto-generated method stub
-		return false;
-	}
 
 //	Done	
 	public void clear() {
@@ -258,32 +240,23 @@ public class TanzeelLinkedList{
 			curr_index++;
 			curr_node = curr_node.next;
 		}
-		
 		return -1;
 	}
-
 	
-	public int lastIndexOf(Object o) {
-		// TODO Auto-generated method stub
-		return 0;
+//	Done
+	public int lastIndexOf(int o) {
+		if(this.head == null)
+			return -1;
+		
+		int pos = 0, index = 0;
+		Node curr_node = this.head;
+		
+		while(curr_node.next != null) {
+			if(curr_node.data == o)
+				index = pos;
+			curr_node = curr_node.next;
+			pos++;
+		}	
+		return index+2;
 	}
-
-	
-	public ListIterator<?> listIterator() {
-		// TODO Auto-generated method stub
-		return null;
-	}
-
-	
-	public ListIterator<?> listIterator(int index) {
-		// TODO Auto-generated method stub
-		return null;
-	}
-
-	
-	public List<?> subList(int fromIndex, int toIndex) {
-		// TODO Auto-generated method stub
-		return null;
-	}
-	
 }
