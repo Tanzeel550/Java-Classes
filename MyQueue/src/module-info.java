@@ -1,0 +1,9 @@
+/**
+ * 
+ */
+/**
+ * @author Tanzeel
+ *
+ */
+module MyQueue {
+}
